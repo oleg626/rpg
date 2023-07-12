@@ -7,7 +7,6 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     public float agrRange;
     private Transform player;
-    public float attackRange;
     public Animator animator;
     Flipping flippin;
     void Start()
@@ -27,21 +26,13 @@ public class EnemyFollow : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
        
-        if(distanceFromPlayer < attackRange)
-        {
-            animator.SetTrigger("Attack");
-        }
-        else
-        {
-            animator.ResetTrigger("Attack");
-        }
+        
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, agrRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        
     }
 }
