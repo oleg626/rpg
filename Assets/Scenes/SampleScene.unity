@@ -803,6 +803,7 @@ MonoBehaviour:
   m_Dithering: 0
   m_ClearDepth: 1
   m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
   m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
@@ -2937,7 +2938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeac562db93252145a34f5a71e92279d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 1580628051}
   myWeapon: {fileID: 2057975132}
 --- !u!1 &966707347
 GameObject:
@@ -3909,7 +3909,6 @@ GameObject:
   - component: {fileID: 1580628053}
   - component: {fileID: 1580628052}
   - component: {fileID: 1580628055}
-  - component: {fileID: 1580628054}
   - component: {fileID: 1580628056}
   - component: {fileID: 1580628057}
   - component: {fileID: 1580628058}
@@ -3991,21 +3990,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1580628054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580628051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fe28c436ea81a4cb17b221b32895ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  rb: {fileID: 1580628055}
-  animator: {fileID: 1580628056}
 --- !u!50 &1580628055
 Rigidbody2D:
   serializedVersion: 4
