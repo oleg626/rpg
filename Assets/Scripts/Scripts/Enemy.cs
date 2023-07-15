@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
   
         textMesh.text = damage.ToString();
       
-        animator.SetTrigger("Hurt");
+        //animator.SetTrigger("Hurt");
 
         if(currentHealth <= 0) 
         {

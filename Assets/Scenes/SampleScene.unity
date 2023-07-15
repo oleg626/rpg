@@ -5342,6 +5342,7 @@ MonoBehaviour:
   lootlist:
   - {fileID: 11400000, guid: c59be5b39a5c272448547c1ad572b574, type: 2}
   - {fileID: 11400000, guid: 5e982f308cd5970498f590b66fa39b74, type: 2}
+  - {fileID: 11400000, guid: 2ce04a0aec20aa440a36b58c7a659630, type: 2}
 --- !u!95 &2056244792 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8364146193804319646, guid: 4ac8cdff2df19064c91ac0d9a7d1a6df, type: 3}
