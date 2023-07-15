@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b60a3821a7e7f2468ea0a0a2d53fc4d, type: 3}
-  m_Name: red_dagger_loot
+  m_Script: {fileID: 11500000, guid: 225f42a9a4e159a4ebd71960d2f5fccb, type: 3}
+  m_Name: DefaultLoot
   m_EditorClassIdentifier: 
-  itemName: Red dagger
-  itemType: 0
-  icon: {fileID: 21300000, guid: 0e0ad53d15bc9cf448d6da9494258629, type: 3}
-  itemLevel: 5
-  itemValue: 100
-  dropChance: 100
+  itemName: Default
+  itemType: 3
+  icon: {fileID: 0}
+  itemLevel: 1
+  itemValue: 0
+  itemQuantity: 1
+  dropChance: 10

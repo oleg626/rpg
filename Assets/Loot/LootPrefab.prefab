@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7349797134740618021}
   - component: {fileID: 5584522828457932215}
-  - component: {fileID: 7031183566509849757}
   - component: {fileID: 7449872833468084904}
+  - component: {fileID: 2529271656468043756}
   m_Layer: 0
   m_Name: LootPrefab
   m_TagString: Untagged
@@ -86,24 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7031183566509849757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246664604504833159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b60a3821a7e7f2468ea0a0a2d53fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: New Item
-  itemType: 3
-  icon: {fileID: 0}
-  itemLevel: 1
-  itemValue: 0
-  dropChance: 10
 --- !u!58 &7449872833468084904
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,3 +121,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2529271656468043756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246664604504833159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b60a3821a7e7f2468ea0a0a2d53fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_data: {fileID: 11400000, guid: 81ed61ddd98dbad4eb9b78b89050fad8, type: 2}

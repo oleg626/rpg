@@ -5,7 +5,7 @@ using static UnityEditor.Progress;
 
 public class PlayerLoot : MonoBehaviour
 {
-    private Dictionary<string, LootItem> m_loot = new Dictionary<string, LootItem>();
+    private Dictionary<string, LootItemData> m_loot = new Dictionary<string, LootItemData>();
     private Dictionary<string, int> m_loot_quantity;
     public int m_slots_number = 10;
 
@@ -26,12 +26,12 @@ public class PlayerLoot : MonoBehaviour
         LootItem item = other.GetComponent<LootItem>();
         if (item != null)
         {
-            if (addLootItem(item))
+            if (addLootItem(item.m_data))
                 item.Collect();
         }
     }
 
-    private bool addLootItem(LootItem loot)
+    private bool addLootItem(LootItemData loot)
     {
         if (m_loot.ContainsKey(loot.itemName))
         {
