@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LootBag : MonoBehaviour
-{
-
+{ 
     public GameObject droppedItemPrefab;
-    public List<Loot> lootlist = new List<Loot>();
+    public List<LootItem> lootlist = new List<LootItem>();
     // Start is called before the first frame update
-    
-    Loot GetDroppedItem()
+
+    LootItem GetDroppedItem()
     {
         int randomNumber = Random.Range(1, 101);
-        List<Loot> possibleItems = new List<Loot>();
-        foreach(Loot item in lootlist)
+        List<LootItem> possibleItems = new List<LootItem>();
+        foreach(LootItem item in lootlist)
         {
             if(randomNumber <= item.dropChance)
             {
                 possibleItems.Add(item);
-                
             }
         }
         if (possibleItems.Count > 0)
         {
-            Loot droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
+            LootItem droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
             return droppedItem;
         }
         Debug.Log("Без лута");
@@ -32,11 +30,18 @@ public class LootBag : MonoBehaviour
 
     public void InstantiateLoot( Vector3 spawnPosition)
     {
-        Loot droppedItem = GetDroppedItem();
+        LootItem droppedItem = GetDroppedItem();
         if(droppedItem != null)
         {
             GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.lootSprite;
+            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.icon;
+            LootItem item = lootGameObject.GetComponent<LootItem>();
+            item.itemName = droppedItem.name;
+            item.itemLevel = droppedItem.itemLevel;
+            item.itemValue = droppedItem.itemValue;
+            item.itemType = droppedItem.itemType;
+            item.icon = droppedItem.icon;
+            item.dropChance = droppedItem.dropChance;
 
 
          /*  float dropForce = 200f;

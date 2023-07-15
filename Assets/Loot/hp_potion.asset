@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b6e82b27cea0c478109c95a68ba18d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b60a3821a7e7f2468ea0a0a2d53fc4d, type: 3}
   m_Name: hp_potion
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: e625150cc0b3a8f44967ee54b6b85dc1, type: 3}
-  lootName: hp_potion
+  itemName: Healing potion
+  itemType: 2
+  icon: {fileID: 21300000, guid: e625150cc0b3a8f44967ee54b6b85dc1, type: 3}
+  itemLevel: 1
+  itemValue: 5
   dropChance: 100

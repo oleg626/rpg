@@ -7,28 +7,19 @@ using UnityEngine.UI;
 using UnityEngine.Windows;
 
 public class Enemy : MonoBehaviour
-
-{
-
-    
+{   
     public GameObject damagePoints;
     public Animator animator;
     public int maxHealth = 100;
-    int currentHealth;
-
-
-    
+    int currentHealth;   
 
     // Start is called before the first frame update
 
     void Start()
     {
-        
         currentHealth = maxHealth;
-        
     }
 
-   
     public void TakeDamage(int damage)
     {
         currentHealth -=damage;
@@ -40,28 +31,24 @@ public class Enemy : MonoBehaviour
        
   
         textMesh.text = damage.ToString();
-        
-
-        
-      
-
       
         animator.SetTrigger("Hurt");
 
-        if(currentHealth <= 0) {
+        if(currentHealth <= 0) 
+        {
             Die();
         }
+    }
 
-        void Die() {
+    private void Die()
+    {
 
-            Debug.Log(name + " сдох");
+        Debug.Log(name + " сдох");
 
-            animator.SetBool("IsDead", true);
-            GetComponent<Collider2D>().enabled = false;
-            this.enabled = false;
-            GetComponent<LootBag>().InstantiateLoot(transform.position);
-            Destroy(gameObject);
-           
-        }
+        animator.SetBool("IsDead", true);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Destroy(gameObject);
     }
 }
