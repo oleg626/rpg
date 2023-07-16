@@ -8,7 +8,6 @@ public class AoeAbillities : MonoBehaviour
     public Transform attackPoint;
     public Vector3 attackRange = new Vector3(1, 1, 0);
     public LayerMask enemyLayers;
-    public GameObject enemyStats;
     public int attackDamage = 15;
     public float speedDeceleration = 0.5f;
     public float attackRate = 2f;
@@ -37,7 +36,7 @@ public class AoeAbillities : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            
+            enemy.GetComponent<EnemyFollow>().speed = speedDeceleration * speedDeceleration;
             
 
         }
@@ -49,5 +48,9 @@ public class AoeAbillities : MonoBehaviour
             return;
         }
         Gizmos.DrawWireCube(attackPoint.position, attackRange);
+    }
+    void DestoingAOE()
+    {
+        Destroy(gameObject);
     }
 }

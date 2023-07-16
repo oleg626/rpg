@@ -1,4 +1,4 @@
-using BarthaSzabolcs.Tutorial_SpriteFlash;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
