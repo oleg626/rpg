@@ -15,11 +15,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 relativeCursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         //Input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Horizontal", relativeCursorPosition.x);
         animator.SetFloat("Speed", movement.sqrMagnitude);
         
     }

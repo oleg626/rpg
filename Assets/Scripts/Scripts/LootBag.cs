@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LootBag : MonoBehaviour
-{
-
+{ 
     public GameObject droppedItemPrefab;
-    public List<Loot> lootlist = new List<Loot>();
+    public List<LootItemData> lootlist = new List<LootItemData>();
     // Start is called before the first frame update
-    
-    Loot GetDroppedItem()
+
+    LootItemData GetDroppedItem()
     {
         int randomNumber = Random.Range(1, 101);
-        List<Loot> possibleItems = new List<Loot>();
-        foreach(Loot item in lootlist)
+        List<LootItemData> possibleItems = new List<LootItemData>();
+        foreach(LootItemData item in lootlist)
         {
             if(randomNumber <= item.dropChance)
             {
                 possibleItems.Add(item);
-                
             }
         }
         if (possibleItems.Count > 0)
         {
-            Loot droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
+            LootItemData droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
             return droppedItem;
         }
         Debug.Log("Без лута");
@@ -32,11 +30,18 @@ public class LootBag : MonoBehaviour
 
     public void InstantiateLoot( Vector3 spawnPosition)
     {
-        Loot droppedItem = GetDroppedItem();
+        LootItemData droppedItem = GetDroppedItem();
         if(droppedItem != null)
         {
             GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.lootSprite;
+            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.icon;
+            LootItem item = lootGameObject.GetComponent<LootItem>();
+            item.m_data.itemName = droppedItem.name;
+            item.m_data.itemLevel = droppedItem.itemLevel;
+            item.m_data.itemValue = droppedItem.itemValue;
+            item.m_data.itemType = droppedItem.itemType;
+            item.m_data.icon = droppedItem.icon;
+            item.m_data.dropChance = droppedItem.dropChance;
 
 
          /*  float dropForce = 200f;

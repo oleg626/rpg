@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b6e82b27cea0c478109c95a68ba18d, type: 3}
-  m_Name: red_dagger_loot
+  m_Script: {fileID: 11500000, guid: 225f42a9a4e159a4ebd71960d2f5fccb, type: 3}
+  m_Name: cursed_blood 1
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: 0e0ad53d15bc9cf448d6da9494258629, type: 3}
-  lootName: red dagger
-  dropChance: 30
+  itemName: Cursed blood
+  itemType: 3
+  icon: {fileID: 1418602997, guid: 8c9656e2d5e312a468a72c275cc71b87, type: 3}
+  itemLevel: 1
+  itemValue: 0
+  itemQuantity: 1
+  dropChance: 100

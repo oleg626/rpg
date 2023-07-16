@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 225f42a9a4e159a4ebd71960d2f5fccb, type: 3}
-  m_Name: hp_potion
+  m_Name: red_dagger
   m_EditorClassIdentifier: 
-  itemName: Health potion
+  itemName: New Item
   itemType: 3
-  icon: {fileID: 21300000, guid: e625150cc0b3a8f44967ee54b6b85dc1, type: 3}
+  icon: {fileID: 0}
   itemLevel: 1
   itemValue: 0
   itemQuantity: 1
-  dropChance: 50
+  dropChance: 10

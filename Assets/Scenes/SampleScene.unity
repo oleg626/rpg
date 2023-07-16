@@ -2938,7 +2938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeac562db93252145a34f5a71e92279d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 1580628051}
   myWeapon: {fileID: 2057975132}
 --- !u!1 &966707347
 GameObject:
@@ -3660,7 +3659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779079550a20f824ba8311a12d92b461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 4586304779352014349, guid: a0b5be8d65eb61742a54da75b970befe, type: 3}
+  droppedItemPrefab: {fileID: 246664604504833159, guid: b4b23b9437641144bb3ad85899baa269, type: 3}
   lootlist:
   - {fileID: 11400000, guid: 5e982f308cd5970498f590b66fa39b74, type: 2}
   - {fileID: 11400000, guid: c59be5b39a5c272448547c1ad572b574, type: 2}
@@ -3909,12 +3908,12 @@ GameObject:
   - component: {fileID: 1580628053}
   - component: {fileID: 1580628052}
   - component: {fileID: 1580628055}
-  - component: {fileID: 1580628054}
   - component: {fileID: 1580628056}
   - component: {fileID: 1580628057}
   - component: {fileID: 1580628058}
   - component: {fileID: 1580628060}
   - component: {fileID: 1580628059}
+  - component: {fileID: 1580628061}
   m_Layer: 6
   m_Name: character
   m_TagString: Player
@@ -3991,21 +3990,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1580628054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580628051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fe28c436ea81a4cb17b221b32895ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  rb: {fileID: 1580628055}
-  animator: {fileID: 1580628056}
 --- !u!50 &1580628055
 Rigidbody2D:
   serializedVersion: 4
@@ -4083,7 +4067,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.16}
@@ -4150,6 +4134,19 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1580628055}
   animator: {fileID: 1580628056}
+--- !u!114 &1580628061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580628051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e3be3fce67cb243a477c495a78f4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_slots_number: 10
 --- !u!1 &1597160981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5341,10 +5338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779079550a20f824ba8311a12d92b461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 4586304779352014349, guid: a0b5be8d65eb61742a54da75b970befe, type: 3}
+  droppedItemPrefab: {fileID: 246664604504833159, guid: b4b23b9437641144bb3ad85899baa269, type: 3}
   lootlist:
   - {fileID: 11400000, guid: c59be5b39a5c272448547c1ad572b574, type: 2}
   - {fileID: 11400000, guid: 5e982f308cd5970498f590b66fa39b74, type: 2}
+  - {fileID: 11400000, guid: 2ce04a0aec20aa440a36b58c7a659630, type: 2}
 --- !u!95 &2056244792 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8364146193804319646, guid: 4ac8cdff2df19064c91ac0d9a7d1a6df, type: 3}

@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b6e82b27cea0c478109c95a68ba18d, type: 3}
-  m_Name: cursed_blood
+  m_Script: {fileID: 11500000, guid: 225f42a9a4e159a4ebd71960d2f5fccb, type: 3}
+  m_Name: DefaultLoot
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 1418602997, guid: 8c9656e2d5e312a468a72c275cc71b87, type: 3}
-  lootName: cursed_blood
-  dropChance: 100
+  itemName: Default
+  itemType: 3
+  icon: {fileID: 0}
+  itemLevel: 1
+  itemValue: 0
+  itemQuantity: 1
+  dropChance: 10
