@@ -1,4 +1,4 @@
-using BarthaSzabolcs.Tutorial_SpriteFlash;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,18 +10,32 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
     public HealthBar healthBar;
     public GameObject deathEffect;
-
+    public Material damageMaterial;
+    private Material defaultMat;
+    private int currentTime;
+    private bool gotDamage;
 
     void Start()
     {
+        defaultMat = GetComponent<SpriteRenderer>().material;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    void Update()
+    {
+        if(gotDamage && Time.frameCount > currentTime + 5)
+        {
+            GetComponent<SpriteRenderer>().material = defaultMat;
+            gotDamage = false;
+        }
+    }
     public void TakeDamage(int damage)
     {
+        gotDamage = true;
         currentHealth -= damage;
-        
+        GetComponent<SpriteRenderer>().material = damageMaterial;
+        currentTime = Time.frameCount;
         healthBar.SetHealth(currentHealth);
 
        /* StartCoroutine(DamageAnimation());*/
