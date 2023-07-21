@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
     public HealthBar healthBar;
-    public GameObject deathEffect;
+   
     public Material damageMaterial;
     private Material defaultMat;
     private int currentTime;
