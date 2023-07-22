@@ -28,12 +28,12 @@ public class EnemyAttack : MonoBehaviour
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < attackDistance && Time.time > lastAttackTime + attackSpeedSec)
         {
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
 
         }
         else
         {
-            animator.ResetTrigger("Attack");
+            //animator.ResetTrigger("Attack");
         }
     }
     

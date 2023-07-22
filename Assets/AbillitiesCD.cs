@@ -5,41 +5,49 @@ using UnityEngine.UI;
 
 public class AbillitiesCD : MonoBehaviour
 {
-    public Image abillityImage1;
-    public float cooldown1 = 5f;
-    bool isCoolDown = false;
-    public KeyCode abillity1;
-  
-    // Start is called before the first frame update
+    public GameObject player;
+    private SkillSystem skillSystem;
+
+    public GameObject ability1;
+    public GameObject ability2;
+    public GameObject ability3;
+    public GameObject ability4;
+    private List<GameObject> abilities;
+    private List<Image> abilitiesIcons;
+    private int skillsNumber = 0;
     void Start()
     {
-        abillityImage1.fillAmount = 0;
-        
-        
+        abilities = new List<GameObject>();
+        abilities.Add(ability1);
+        abilities.Add(ability2);
+        abilities.Add(ability3);
+        abilities.Add(ability4);
+
+        skillSystem = player.GetComponent<SkillSystem>();
+        abilitiesIcons = new List<Image>();
+        skillsNumber = skillSystem.getNumberOfSkills();
+
+        for (int i = 0; i < skillsNumber; i++) 
+        {
+            abilities[i].GetComponent<Image>().sprite = skillSystem.getSkillImage(i);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Abillity1();
-    }
-
-     void Abillity1()
-    {
-        if(Input.GetKey(abillity1) && isCoolDown == false)
+        for (int i = 0;i < abilitiesIcons.Count; i++)
         {
-            isCoolDown = true;
-            abillityImage1.fillAmount = 1;
-
-        }
-        if (isCoolDown)
-        {
-            abillityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
-            if(abillityImage1.fillAmount <=0)
+            //int cd = skillSystem.getSkillCd(i);
+            //Debug.Log("Abitilities CD: skill " + i + " has cd of " + cd + " sec");
+            /*if (cd > 0)
             {
-                abillityImage1.fillAmount = 0;
-                isCoolDown = false;
+                abilitiesIcons[i].fillAmount = cd;
             }
+            else
+            {
+                abilitiesIcons[i].fillAmount = 0;
+            }*/
         }
     }
 }
