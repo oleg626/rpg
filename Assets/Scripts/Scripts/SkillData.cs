@@ -24,7 +24,12 @@ public class SkillData : ScriptableObject
     // Only in skill area for duration time?
     public float speedDeceleration = 0.5f;
 
-    private float m_lastUsed = -1.0f;
+    private float m_lastUsed = -20f;
+
+    public void cdReset()
+    {
+        m_lastUsed = -20f;
+    }
     public void use()
     {
         Debug.Log("Used");
@@ -33,7 +38,7 @@ public class SkillData : ScriptableObject
 
     public bool isOnCooldown()
     {
-        if (m_lastUsed < 0) 
+        if (m_lastUsed < 0)
             return false;
         return Time.time < (m_lastUsed + cooldownSec);
     }

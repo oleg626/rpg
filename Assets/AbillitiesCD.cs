@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,14 @@ public class AbillitiesCD : MonoBehaviour
     public GameObject ability2;
     public GameObject ability3;
     public GameObject ability4;
+
+    public GameObject cooldown1;
+    public GameObject cooldown2;
+    public GameObject cooldown3;
+    public GameObject cooldown4;
+
     private List<GameObject> abilities;
-    private List<Image> abilitiesIcons;
+    private List<GameObject> cooldowns;
     private int skillsNumber = 0;
     void Start()
     {
@@ -23,8 +30,14 @@ public class AbillitiesCD : MonoBehaviour
         abilities.Add(ability3);
         abilities.Add(ability4);
 
+        cooldowns = new List<GameObject>();
+
+        cooldowns.Add(cooldown1);
+        cooldowns.Add(cooldown2);
+        cooldowns.Add(cooldown3);
+        cooldowns.Add(cooldown4);
+
         skillSystem = player.GetComponent<SkillSystem>();
-        abilitiesIcons = new List<Image>();
         skillsNumber = skillSystem.getNumberOfSkills();
 
         for (int i = 0; i < skillsNumber; i++) 
@@ -34,11 +47,16 @@ public class AbillitiesCD : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        for (int i = 0;i < abilitiesIcons.Count; i++)
+        for (int i = 0; i < skillsNumber; i++)
         {
-            //int cd = skillSystem.getSkillCd(i);
+            int cd = skillSystem.getSkillCd(i);
+            string cdText = "";
+            if (cd > 0) 
+                cdText = cd.ToString();
+            cooldowns[i].GetComponent<TextMeshProUGUI>().text = cdText;
+            //abilities[i].GetComponent<>
             //Debug.Log("Abitilities CD: skill " + i + " has cd of " + cd + " sec");
             /*if (cd > 0)
             {

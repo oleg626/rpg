@@ -13,21 +13,8 @@ public class Skill : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private bool m_isOnCooldown = false;
-    private float m_lastUsed;
+    private float m_startTime = 0;
     private float m_nextTimeAttack = 0.0f;
-
-    public bool isOnCooldown()
-    {
-        return m_isOnCooldown;
-    }
-
-    public int getCooldownLeft()
-    {
-        if (m_isOnCooldown)
-            return (int)(m_data.cooldownSec - (Time.time - m_lastUsed));
-        return 0;
-    }
 
     public void use()
     {
@@ -40,23 +27,16 @@ public class Skill : MonoBehaviour
 
             }
         }
-
-        m_isOnCooldown = true; 
-        m_lastUsed = Time.time;
     }
 
     void Start()
     {
+        m_startTime = Time.time;
     }
     // Update is called once per frame
     void Update()
     { 
-        if (m_isOnCooldown && Time.time > (m_lastUsed + m_data.cooldownSec)) 
-        {
-            m_isOnCooldown = false;
-        }
-
-        if (Time.time > m_nextTimeAttack)
+        if (Time.time > m_nextTimeAttack && (Time.time - m_startTime) < m_data.durationSec)
         {
             Attack();
             m_nextTimeAttack = Time.time + m_data.attackSpeedSec;
