@@ -19,9 +19,9 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: 6b7f9afe53c04b346b570041c60df331, type: 2}
   melee: 0
   attackRange: 10
-  damage: 15
+  damage: 3
   overTime: 1
   attackSpeedSec: 1
-  durationSec: 3
+  durationSec: 7
   cooldownSec: 10
   speedDeceleration: 0.5

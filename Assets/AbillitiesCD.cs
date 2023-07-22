@@ -24,18 +24,21 @@ public class AbillitiesCD : MonoBehaviour
     private int skillsNumber = 0;
     void Start()
     {
-        abilities = new List<GameObject>();
-        abilities.Add(ability1);
-        abilities.Add(ability2);
-        abilities.Add(ability3);
-        abilities.Add(ability4);
+        abilities = new List<GameObject>
+        {
+            ability1,
+            ability2,
+            ability3,
+            ability4
+        };
 
-        cooldowns = new List<GameObject>();
-
-        cooldowns.Add(cooldown1);
-        cooldowns.Add(cooldown2);
-        cooldowns.Add(cooldown3);
-        cooldowns.Add(cooldown4);
+        cooldowns = new List<GameObject>
+        {
+            cooldown1,
+            cooldown2,
+            cooldown3,
+            cooldown4
+        };
 
         skillSystem = player.GetComponent<SkillSystem>();
         skillsNumber = skillSystem.getNumberOfSkills();
@@ -56,16 +59,6 @@ public class AbillitiesCD : MonoBehaviour
             if (cd > 0) 
                 cdText = cd.ToString();
             cooldowns[i].GetComponent<TextMeshProUGUI>().text = cdText;
-            //abilities[i].GetComponent<>
-            //Debug.Log("Abitilities CD: skill " + i + " has cd of " + cd + " sec");
-            /*if (cd > 0)
-            {
-                abilitiesIcons[i].fillAmount = cd;
-            }
-            else
-            {
-                abilitiesIcons[i].fillAmount = 0;
-            }*/
         }
     }
 }
