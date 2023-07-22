@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Enum to represent different types of loot items
+public enum ItemType
+{
+    Weapon,
+    Armor,
+    Consumable,
+    Material,
+    // Add more item types as needed
+}
+
 [CreateAssetMenu(fileName ="LootItemData", menuName ="RPG/Loot Item Data")]
 public class LootItemData : ScriptableObject
 {
@@ -36,5 +46,17 @@ public class LootItemData : ScriptableObject
         itemValue = value;
         itemQuantity = quantity;
         dropChance = chance;
+    }
+
+    public void Assign(LootItemData other)
+    {
+        // Perform the assignment of fields from the 'other' object to this object.
+        this.itemName = other.itemName;
+        this.itemType = other.itemType;
+        this.icon = other.icon;
+        this.itemLevel = other.itemLevel;
+        this.itemValue = other.itemValue;
+        this.itemQuantity = other.itemQuantity;
+        this.dropChance = other.dropChance;
     }
 }

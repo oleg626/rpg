@@ -12,9 +12,9 @@ public class LootBag : MonoBehaviour
     {
         int randomNumber = Random.Range(1, 101);
         List<LootItemData> possibleItems = new List<LootItemData>();
-        foreach(LootItemData item in lootlist)
+        foreach (LootItemData item in lootlist)
         {
-            if(randomNumber <= item.dropChance)
+            if (randomNumber <= item.dropChance)
             {
                 possibleItems.Add(item);
             }
@@ -31,19 +31,13 @@ public class LootBag : MonoBehaviour
     public void InstantiateLoot( Vector3 spawnPosition)
     {
         LootItemData droppedItem = GetDroppedItem();
-        if(droppedItem != null)
+        if (droppedItem != null)
         {
             GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
             lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.icon;
             LootItem item = lootGameObject.GetComponent<LootItem>();
-            item.m_data.itemName = droppedItem.name;
-            item.m_data.itemLevel = droppedItem.itemLevel;
-            item.m_data.itemValue = droppedItem.itemValue;
-            item.m_data.itemType = droppedItem.itemType;
-            item.m_data.icon = droppedItem.icon;
-            item.m_data.dropChance = droppedItem.dropChance;
-
-
+            item.m_data = droppedItem;
+           
          /*  float dropForce = 200f;
             Vector2 dropDirection = new Vector2(Random.Range(- 1f, 1), Random.Range(-1f, 1));
             lootGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);*/

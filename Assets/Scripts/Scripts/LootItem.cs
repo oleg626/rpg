@@ -1,15 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-// Enum to represent different types of loot items
-public enum ItemType
-{
-    Weapon,
-    Armor,
-    Consumable,
-    Material,
-    // Add more item types as needed
-}
 
 [System.Serializable]
 public class LootItem : MonoBehaviour, ICollectible
