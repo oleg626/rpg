@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d702078f6e8d53a41bdd7af3ff7a5087, type: 3}
-  m_Name: ice_pikes
+  m_Name: testShoot
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: d29d20e7941a43640885fbb659753180, type: 3}
+  image: {fileID: 21300000, guid: e625150cc0b3a8f44967ee54b6b85dc1, type: 3}
   targetsLayer:
     serializedVersion: 2
-    m_Bits: 1024
-  animator: {fileID: 9100000, guid: 6b7f9afe53c04b346b570041c60df331, type: 2}
+    m_Bits: 0
+  animator: {fileID: 9100000, guid: 92b6171cd48a6fc42998718de10a9314, type: 2}
   melee: 0
   aoe: 0
   attackRange: 10
   heigth: 2
-  width: 6
-  damage: 5
+  width: 4
+  damage: 15
   overTime: 1
   attackSpeedSec: 1
-  durationSec: 7
+  durationSec: 3
   cooldownSec: 10
   speedDeceleration: 0.5

@@ -39,6 +39,7 @@ public class SkillSystem : MonoBehaviour
      void Start()
      {
         greenCursor.GetComponent<Renderer>().enabled = false;
+        redCursor.GetComponent<Renderer>().enabled = false;
 
         m_keyToIndex = new Dictionary<KeyCode, int>
         {
@@ -56,8 +57,10 @@ public class SkillSystem : MonoBehaviour
 
     void Update()
     {
+        updateCursor();
         mousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 
                                Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        
 
         if (m_skillsData == null)
             return;
@@ -69,6 +72,9 @@ public class SkillSystem : MonoBehaviour
             createdSkill.m_data = m_skillsData[m_currentSkill];
             createdSkill.use();
             m_skillsData[m_currentSkill].use();
+            m_currentSkill = -1;
+            Cursor.visible = true;
+            greenCursor.GetComponent<Renderer>().enabled = false;
         }
 
         foreach (KeyCode key in m_keyToIndex.Keys)
@@ -87,18 +93,27 @@ public class SkillSystem : MonoBehaviour
                 else
                 {
                     m_currentSkill = index;
+                    Cursor.visible = false;
+                    greenCursor.GetComponent<Renderer>().enabled = true;
                 }
             }
         }
+        
 
-        updateCursor();
+        
     }
 
     void updateCursor()
     {
+        Debug.Log("Чек");
         if (m_currentSkill == -1)
+        {
+            redCursor.GetComponent<Renderer>().enabled = false;
+            greenCursor.GetComponent<Renderer>().enabled = false;
             return;
-
+        }
+        mousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
+                               Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
         bool inRange = (gameObject.transform.position - mousePos).sqrMagnitude < MathF.Pow(m_skillsData[m_currentSkill].attackRange, 2);
         // Perform the raycast from the origin to the target point
         Vector3 direction = mousePos - gameObject.transform.position;
@@ -107,16 +122,19 @@ public class SkillSystem : MonoBehaviour
 
         // Check if there is an obstacle along the ray's path
         bool collision = Physics.Raycast(ray, distance, mapLayer);
+        
 
         if (!inRange || collision)
         {
-            redCursor.GetComponent<SpriteRenderer>().enabled = true;
-            greenCursor.GetComponent<SpriteRenderer>().enabled = false;
+            redCursor.GetComponent<Renderer>().enabled = true;
+            greenCursor.GetComponent<Renderer>().enabled = false;
         }
         else
         {
-            redCursor.GetComponent<SpriteRenderer>().enabled = false;
-            greenCursor.GetComponent<SpriteRenderer>().enabled = true;
+            redCursor.GetComponent<Renderer>().enabled = false;
+            greenCursor.GetComponent<Renderer>().enabled = true;
         }
+        greenCursor.transform.position = mousePos;
+        redCursor.transform.position = mousePos;
     }
 }

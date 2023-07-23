@@ -11,8 +11,10 @@ public class SkillData : ScriptableObject
     public RuntimeAnimatorController animator;
 
     public bool melee = false;
+    public bool aoe = false;
     public float attackRange = 10;
-    
+    public float heigth = 2f;
+    public float width = 4f;
     public int damage = 15;
     
     // If overTime is true - damage is done each *attackSpeedSec* for *durationSec*
