@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 17348339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800054583}
+        m_TargetAssemblyTypeName: CharacterSelectionManager, Assembly-CSharp
+        m_MethodName: NextOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &17348339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,8 +1071,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 344443062}
-  - {fileID: 234296365}
   - {fileID: 17348337}
+  - {fileID: 234296365}
   - {fileID: 1418308628}
   - {fileID: 108522953}
   m_Father: {fileID: 0}
@@ -1154,7 +1166,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418308630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800054583}
+        m_TargetAssemblyTypeName: CharacterSelectionManager, Assembly-CSharp
+        m_MethodName: BackOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418308630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,6 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1800054582}
   - component: {fileID: 1800054581}
+  - component: {fileID: 1800054583}
   m_Layer: 0
   m_Name: selected_character
   m_TagString: Untagged
@@ -1369,6 +1394,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1800054583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800054580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3d712e3cb370c4d90430cd788af1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDB: {fileID: 11400000, guid: f7cb9e4c59c6efe40ab712ab4f808f1e, type: 2}
+  nameText: {fileID: 234296366}
+  characterSprite: {fileID: 1800054581}
 --- !u!1 &1803689492
 GameObject:
   m_ObjectHideFlags: 0
