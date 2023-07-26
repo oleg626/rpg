@@ -105,7 +105,7 @@ public class SkillSystem : MonoBehaviour
 
     void updateCursor()
     {
-        Debug.Log("Чек");
+     
         if (m_currentSkill == -1)
         {
             redCursor.GetComponent<Renderer>().enabled = false;
