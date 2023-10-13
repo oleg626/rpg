@@ -17,7 +17,7 @@ public class SkillSystem : MonoBehaviour
     public GameObject greenCursor;
     public GameObject redCursor;
     private Vector3 mousePos;
-    private KeyCode cancelSkill = KeyCode.Escape;
+  
     private int m_currentSkill = -1;
     private Dictionary<KeyCode, int> m_keyToIndex;
 

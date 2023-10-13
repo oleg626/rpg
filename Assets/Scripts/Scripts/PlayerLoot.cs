@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class PlayerLoot : MonoBehaviour
 {
@@ -21,13 +21,17 @@ public class PlayerLoot : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    private void OnTriggerStay2D(Collider2D other)
     {
         LootItem item = other.GetComponent<LootItem>();
-        if (item != null)
+        if (Input.GetKey(KeyCode.E))
         {
-            if (addLootItem(item.m_data))
-                item.Collect();
+            if (item != null)
+            {
+                if (addLootItem(item.m_data))
+                    item.Collect();
+            }
         }
     }
 
